@@ -4,7 +4,12 @@ module Exercises
   #  - Triples a given string `str`
   #  - Returns "nope" if `str` is "wishes"
   def self.ex0(str)
-    # TODO
+    if str == "wishes"
+      return "nope"
+      elsif trips = 3.times.collect {str}.join('')
+        trips
+    end
+   
   end
 
   # Exercise 1
