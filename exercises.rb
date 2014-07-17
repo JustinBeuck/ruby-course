@@ -15,30 +15,33 @@ module Exercises
   # Exercise 1
   #  - Returns the number of elements in the array
   def self.ex1(array)
-    # TODO
+    total = array.count
+    total
   end
 
   # Exercise 2
   #  - Returns the second element of an array
   def self.ex2(array)
-    # TODO
+    dos = array[1]
   end
 
   # Exercise 3
   #  - Returns the sum of the given array of numbers
   def self.ex3(array)
-    # TODO
+    array.inject(:+)
   end
 
   # Exercise 4
   #  - Returns the max number of the given array
   def self.ex4(array)
+    array.max
     # TODO
   end
 
   # Exercise 5
   #  - Iterates through an array and `puts` each element
   def self.ex5(array)
+    array.each{|x| puts x}
     # TODO
   end
 
@@ -47,14 +50,22 @@ module Exercises
   #  - If the last item is already 'panda', update
   #    it to 'GODZILLA' instead
   def self.ex6(array)
-    # TODO
+    if array[-1] != "panda"
+    array.pop
+    array.push("panda")
+    else array[-1] == "panda"
+      array.pop
+      array.push("GODZILLA")
+    end
   end
 
   # Exercise 7
   #  - If the string `str` exists in the array,
   #    add `str` to the end of the array
   def self.ex7(array, str)
-    # TODO
+    if array.include?(str)
+      array << str
+    end# TODO
   end
 
   # Exercise 8
@@ -62,7 +73,7 @@ module Exercises
   #    { :name => 'Bob', :occupation => 'Builder' }
   #    Iterate through `people` and print out their name and occupation.
   def self.ex8(people)
-    # TODO
+    people.each{|x| puts "#{x[:name]} #{x[:occupation]}" }
   end
 
   # Exercise 9
@@ -70,7 +81,7 @@ module Exercises
   #    Otherwise, returns `false`
   # Hint: Google for the wikipedia article on leap years
   def self.ex9(time)
-    # TODO
+    Date.gregorian_leap?(time)
   end
 end
 
@@ -88,6 +99,37 @@ class RPS
   #
   # You will be using this class in the following class, which will let players play
   # RPS through the terminal.
+    attr_reader :player1, :player2
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
+    @player1_wins = 0
+    @player2_wins = 0
+  end
+
+  def play(move1, move2)
+    if move1 == "rock" && move2 == "paper"
+      @player2_wins += 1
+        "Player2 Wins!"
+    elsif move1 == "rock" && move2 == "scissors"
+      @player1_wins += 1
+        "Player1 Wins!"
+      elsif move1 == "paper" && move2 == "scissors"
+        @player2_wins += 1
+          "Player 2 Wins!"
+        elsif move1 == "paper" && move2 == "rock"
+          @player1_wins += 1
+          "Player 1 Wins!"
+      elsif move1 == "scissors" && move2 == "paper"
+        @player1_wins += 1
+        "Player 1 wins!"
+    elsif move1 == "scissors" && move2 == "rock"
+      @player2_wins += 1
+      "Player 2 wins!"
+  elsif move1 == move2
+    "tie"   
+    end
+  end
 end
 
 
