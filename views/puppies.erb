@@ -1,0 +1,19 @@
+<center>
+  <h2>Puppy List</h2><br />
+  <table>
+  <tr>
+    <th>Name</th>
+    <th>Breed</th>
+    <th>Age</th>
+  </tr>
+
+  <% @puppies.each do |pup| %>
+    <tr>
+      <td><%= pup.name %></td>
+      <td><%= pup.breed %></td>
+      <td><%= pup.age %></td>
+      <td><a href='/deletepup/<%= pup.id %>'>Delete</a></td>
+    </tr>
+  <% end %>
+  </table>
+</center>

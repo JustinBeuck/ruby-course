@@ -1,0 +1,60 @@
+<center>
+  <h2>Pending Requests</h2>
+  <table>
+  <tr>
+    <th>Request ID</th>
+    <th>Breed</th>
+    <th>Customer</th>
+    <th>Status</th>
+  </tr>
+
+  <% @pending.each do |req| %>
+    <tr>
+      <td><%= req.id %></td>
+      <td><%= req.breed %></td>
+      <td><%= req.customer %></td>
+      <td><%= req.status %></td>
+      <td><a href='/pendingreqs/<%= req.id %>'>Accept</a></td>
+    </tr>
+  <% end %>
+  </table><br /><br />
+
+  <h2>On Hold Requests</h2>
+  <table>
+  <tr>
+    <th>Request ID</th>
+    <th>Breed</th>
+    <th>Customer</th>
+    <th>Status</th>
+  </tr>
+
+  <% @onhold.each do |req| %>
+    <tr>
+      <td><%= req.id %></td>
+      <td><%= req.breed %></td>
+      <td><%= req.customer %></td>
+      <td><%= req.status %></td>
+    </tr>
+  <% end %>
+  </table><br /><br />
+
+  <h2>Accepted Requests</h2>
+  <table>
+  <tr>
+    <th>Request ID</th>
+    <th>Breed</th>
+    <th>Customer</th>
+    <th>Status</th>
+  </tr>
+
+  <% @accepted.each do |req| %>
+    <tr>
+      <td><%= req.id %></td>
+      <td><%= req.breed %></td>
+      <td><%= req.customer %></td>
+      <td><%= req.status %></td>
+    </tr>
+  <% end %>
+  </table>
+
+</center>

@@ -1,0 +1,23 @@
+<center>
+  <b>Add a new breed</u><br />
+  <form action='/breeds' method='POST'>
+    <input type='text' name='breed' placeholder='Breed'><br />
+    <input type='text' name='price' placeholder='Price'><br />
+    <input type='submit' value='Submit'>
+  </form><br/><br />
+  
+  <h2>Breed List</h2>
+  <table>
+  <tr>
+    <th>Breed</th>
+    <th>Price</th>
+  </tr>
+
+  <% @breeds.each do |bp| %>
+    <tr>
+      <td><%= bp.first %></td>
+      <td><%= bp.last %></td>
+    </tr>
+  <% end %>
+  </table>
+</center>
