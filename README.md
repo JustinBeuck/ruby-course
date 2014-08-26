@@ -14,3 +14,8 @@ A Point of Sales system built for Double Dog Hot Dogs.
 - As an employee, I want to sign into Double Dog PoS
 - As an employee, I want to create orders
   - Each order will have at least one item
+
+1. Share database specs across in-memory and sql
+2. Install and use active_record_tasks
+3. Create migrations for entities
+4. Make the tests pass
