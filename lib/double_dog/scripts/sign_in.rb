@@ -1,5 +1,7 @@
-module DoubleDog
-  class SignIn
+ module DoubleDog
+
+  class SignIn < TransactionScript
+    include Auth
 
     def run(params)
       return failure(:nil_username) if params[:username].nil?
@@ -15,16 +17,6 @@ module DoubleDog
       session_id = DoubleDog.db.create_session(user_id: user.id)
       retrieved_user = DoubleDog.db.get_user_by_session_id(session_id)
       return success(:user => retrieved_user, :session_id => session_id)
-    end
-
-  private
-
-    def failure(error_name)
-      return :success? => false, :error => error_name
-    end
-
-    def success(data)
-      return data.merge(:success? => true)
     end
   end
 end

@@ -12,6 +12,8 @@ require_relative 'double_dog/entities/order.rb'
 
 require_relative 'double_dog/database/in_memory.rb'
 
+require_relative 'double_dog/mixins/transactionscript.rb'
+require_relative 'double_dog/mixins/auth.rb'
 require_relative 'double_dog/scripts/create_account.rb'
 require_relative 'double_dog/scripts/create_item.rb'
 require_relative 'double_dog/scripts/sign_in.rb'
